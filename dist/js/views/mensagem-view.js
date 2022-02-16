@@ -1,13 +1,8 @@
-export default class MensagemView {
-    constructor(seletor) {
-        this.elemento = document.querySelector(seletor);
-    }
+import View from "./view.js";
+export default class MensagemView extends View {
     template(model) {
         return `
       <p class="alert alert-primary"> ${model}</p>
     `;
-    }
-    update(model) {
-        this.elemento.innerHTML = this.template(model);
     }
 }
