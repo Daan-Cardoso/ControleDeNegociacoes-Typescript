@@ -5,7 +5,4 @@ export default class View {
     update(model) {
         this.elemento.innerHTML = this.template(model);
     }
-    template(model) {
-        throw Error('Este método precisa ser sobrescrito');
-    }
 }

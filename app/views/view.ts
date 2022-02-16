@@ -1,4 +1,4 @@
-export default class View<T> {
+export default abstract class View<T> {
   protected elemento: HTMLElement;
   constructor(seletor: string) {
     this.elemento = document.querySelector(seletor);
@@ -8,7 +8,5 @@ export default class View<T> {
     this.elemento.innerHTML = this.template(model);
   }
 
-  template(model: T): string {
-    throw Error('Este método precisa ser sobrescrito')
-  }
+  abstract template(model: T): string;
 }
