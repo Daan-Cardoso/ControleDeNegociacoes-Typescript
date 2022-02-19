@@ -1,3 +1,4 @@
+import { inspect } from "../decorators/inspect.js";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 import { DiaDaSemana } from "../enums/dias-da-semana.js";
 import Negociacao from "../models/negociacao.js";
@@ -23,6 +24,7 @@ export class NegociacaoController {
   }
 
   @logarTempoDeExecucao()
+  @inspect()
   public adiciona(): void {
     const negociacao = Negociacao.criar(
       this.inputData.value,
